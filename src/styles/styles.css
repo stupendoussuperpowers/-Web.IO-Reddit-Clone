@@ -1,0 +1,132 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  background-color: #dae0e6;
+}
+
+.score{
+  font-size: 75%;
+}
+
+#heading {
+  margin: 0;
+  text-align: left;
+  padding: 5px;
+  font-size: 30px;
+  position: relative;
+}
+#heading img {
+  height: 48px;
+  vertical-align: bottom;
+}
+#heading span {
+  margin-left: 10px;
+}
+
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  background-color: white;
+  padding: 10px 10px;
+}
+.SearchBar {
+  height: 40px;
+  width: 20%;
+  position: absolute;
+  left: 40%;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  background-color: #f6f7f8;
+  padding: 0 6px;
+  margin: 0 0 15px 0;
+}
+
+.Post-List {
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.Post {
+  width: 60%;
+  display: flex;
+  margin: 2%;
+  padding: 3%;
+  border-radius: 3px;
+  background-color: white;
+
+  box-shadow: 1px 2px 7px rgba(50, 50, 50, 0.75);
+}
+.Post-user {
+  margin-top: 0;
+  font-size: 10px;
+  color: grey;
+  text-align: left;
+}
+.Post-text {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+.votes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 5px;
+}
+
+.votes p {
+  margin: 0;
+}
+
+.votes img {
+  height: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.upvote:hover {
+  background-color: green;
+  border-radius: 50%;
+}
+.downvote:hover {
+  background-color: red;
+  border-radius: 50%;
+}
+
+.ltr{
+  display: flex;
+}
+
+.commentbody{
+  margin: 5px;
+}
+
+.comment{
+  transform: translate(10px);
+  width: 95%;
+  margin: 10px;
+}
+
+.redditline{
+  transform: translate(17px);
+  border-left: 2px solid black;
+}
+
+.line{
+  width: 2px;
+  border-color: black;
+  border-right: 2px solid black;
+}
+
+.slightmargin{
+  margin-top: 5px;
+}
+
+.margin-right{
+  margin-right: 5px;
+}
