@@ -1,3 +1,12 @@
+@font-face{
+  font-family: Verdana;
+  src: local('Verdana');
+}
+
+body {
+  font-family: Verdana;
+}
+
 .post-wrapper {
   text-align: left;
   width: 80%;
@@ -38,7 +47,6 @@
 .sub-info {
   width: 90%;
   margin: 20px auto;
-  height: 20vh;
   border-radius: 3px;
   background-color: white;
   box-shadow: 1px 2px 7px rgba(50, 50, 50, 0.75);
@@ -51,6 +59,20 @@
   background-color: #014980;
 }
 
+#moveUp{
+  text-align: center;
+}
+
+#moveUpText{
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.sub-info img{
+  margin: 5px;
+  margin-right: 20px;
+}
+
 .sub-info p {
   padding: 5px;
 }
@@ -61,23 +83,24 @@
 
 .bold{
   font-weight: bold;
- 
 }
 
 .larger{
   font-weight: bold;
-  font-size: 150%;
+  font-size: 125%;
+  margin-top: 10px;
 }
 
 .ltr{
   display: flex;
+  margin-right: 20px;
 }
 
-.wrapstuff{
+.wrap{
   overflow-wrap: break-word;
   width: 95%;
   padding: 8px 12px;
-  font-size: 100%;
+  font-size: 95%;
 }
 
 .slightmargin{
