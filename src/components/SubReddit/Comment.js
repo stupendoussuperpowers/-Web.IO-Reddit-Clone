@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {VoteCounter} from "../VoteCounter";
 import '../../styles/styles.css'
+import ReactHtmlParser from 'react-html-parser';
 
 class Comment extends Component{
   constructor(props){
@@ -25,7 +26,7 @@ class Comment extends Component{
 
         <div className = "slightmargin">
         <small>{this.state.username} {this.state.hours} hours ago </small>
-        <div className = "commentbody">{this.state.body}</div>
+        <div className = "commentbody" dangerouslySetInnerHTML={{__html: ReactHtmlParser(this.state.body)}} />
         </div>
         </div>
 
@@ -34,7 +35,7 @@ class Comment extends Component{
             <div>{
                 this.state.subcomment.map(
                   function(val, ind){
-                    return <Comment key = {val.data.id} votes = {val.data.score>1000? `${(val.data.score/1000).toFixed(1)}k`: val.data.score} username = {val.data.author} hours = "x" body = {val.data.body} 
+                    return <Comment key = {val.data.id} votes = {val.data.score>1000? `${(val.data.score/1000).toFixed(1)}k`: val.data.score} username = {val.data.author} hours = "x" body = {val.data.body_html} 
                       subcomment = {val.data.replies?val.data.replies.data.children:[]}
                     /> 
                   }

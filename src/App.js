@@ -5,6 +5,18 @@ import SubInfo from "./components/SubReddit/SubInfo";
 import "./styles/styles.css";
 import * as RedditAPI from 'reddit-wrapper-v2';
 
+export const redditconn = RedditAPI({
+  username: process.env.REACT_APP_REDDIT_USERNAME,
+  password: process.env.REACT_APP_REDDIT_PASSWORD,
+  app_id : process.env.REACT_APP_APP_ID,
+  api_secret: process.env.REACT_APP_API_SECRET,
+  retry_on_wait: true,
+  retry_on_server_error: 5,
+  retry_delay: 1,
+  logs: true
+});
+
+
 export default class  App extends React.Component {
 
   constructor(props) {
@@ -15,20 +27,12 @@ export default class  App extends React.Component {
   }
 
   componentDidMount(){
-    var redditconn = RedditAPI({
-      username: process.env.REACT_APP_REDDIT_USERNAME,
-      password: process.env.REACT_APP_REDDIT_PASSWORD,
-      app_id : process.env.REACT_APP_APP_ID,
-      api_secret: process.env.REACT_APP_API_SECRET,
-      retry_on_wait: true,
-      retry_on_server_error: 5,
-      retry_delay: 1,
-      logs: true
-    });
-
     redditconn.api.get('/r/LifeProTips/about', {}).then( data => {
       console.log("Subreddit", data[1].data);
-      this.setState({desc: data[1].data.public_description, icon : data[1].data.community_icon, subreddit: data[1].data.title });
+      this.setState({desc: data[1].data.public_description, 
+        icon : data[1].data.community_icon, 
+        subreddit: data[1].data.title,
+      subs: data[1].data.subscribers });
     })
 
   }
@@ -42,7 +46,7 @@ export default class  App extends React.Component {
             <PostCard key = "test"/>
           </div>
           <div className="column-2">
-            <SubInfo heading = "About Community" content = {this.state.desc} icon = {this.state.icon} subreddit = {this.state.subreddit}/>
+            <SubInfo subs = {this.state.subs} heading = "About Community" content = {this.state.desc} icon = {this.state.icon} subreddit = {this.state.subreddit}/>
           </div>
         </div>
       </div>

@@ -3,6 +3,20 @@ import "../../styles/PostPage.css";
 
 export class SubInfo extends Component {
 
+  numberToWord(val){
+    var suffix = '';
+    if(val>1000){
+      val = (val/1000).toFixed(1);
+      suffix = 'k';
+    }
+    if(val>1000){
+      val = (val/1000).toFixed(1);
+      suffix = 'M';
+    }
+
+    return val+suffix;
+  }
+
   render() {
     return (
       <div className="sub-info">
@@ -14,6 +28,7 @@ export class SubInfo extends Component {
         {this.props.subreddit}
         </div>:<div>{this.props.subreddit}</div>
         }
+        <div>{this.numberToWord(this.props.subs)}</div>
         <p>{this.props.content}</p>
       </div>
     );

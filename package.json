@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "html-react-parser": "^0.10.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-html-parser": "^2.0.2",
