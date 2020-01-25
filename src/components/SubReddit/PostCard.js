@@ -20,10 +20,11 @@ export default class PostCard extends React.Component {
 
   componentDidMount(){
 
-    redditconn.api.get('/r/LifeProTips/comments/et2txr',{}).then( data => {
+    redditconn.api.get(this.props.url,{}).then( data => {
         var postData = data[1][0].data.children[0].data;
         var commentData = data[1][1].data.children;
-        console.log("CommentData",commentData);
+        console.log("PostData",postData);
+        console.log("Preview", postData.preview);
         this.setState({postData:postData, commentData: commentData, dict: data[1][0].data.children[0].data.selftext, dict2: data[1][1].data.children})
         }
     );
@@ -48,13 +49,15 @@ export default class PostCard extends React.Component {
           <small><span className = "bold">{this.state.postData.subreddit_name_prefixed} . </span>
           <span>Posted by u/{this.state.postData.author} X hours ago </span> </small>
           <div className = "larger">{this.state.postData.title}</div>
-          {/* <div className = "wrap">{this.state.postData.selftext}</div> */}
           
           <div dangerouslySetInnerHTML={{__html: ReactHtmlParser(this.state.postData.selftext_html)}} />
-
-          {/* <div >
-            {ReactHtmlParser(this.state.postData.selftext_html)}
-          </div> */}
+          {
+            this.state.postData.post_hint == "image"?
+            <div className = "post-image">
+              <img src = {this.state.postData.url} alt = "thumbnail" width = "200px"/>
+            </div>:
+            <div></div>
+          }
           
           <hr />
           Comments

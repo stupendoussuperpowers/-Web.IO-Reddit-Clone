@@ -1,9 +1,10 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import PostCard from "./components/SubReddit/PostCard";
-import SubInfo from "./components/SubReddit/SubInfo";
+import PhotoPage from "./PhotoPage";
+import TextPage from "./TextPage";
 import "./styles/styles.css";
 import * as RedditAPI from 'reddit-wrapper-v2';
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 export const redditconn = RedditAPI({
   username: process.env.REACT_APP_REDDIT_USERNAME,
@@ -41,14 +42,12 @@ export default class  App extends React.Component {
     return (
       <div className="App">
         <Navbar />
-        <div className="post-wrapper">
-          <div className="column-1">
-            <PostCard key = "test"/>
-          </div>
-          <div className="column-2">
-            <SubInfo subs = {this.state.subs} heading = "About Community" content = {this.state.desc} icon = {this.state.icon} subreddit = {this.state.subreddit}/>
-          </div>
-        </div>
+        <Router>
+        <Switch>
+        <Route path = "/" exact component = {PhotoPage} />
+        <Route path = "/textpage" exact component = {TextPage} />
+        </Switch>
+        </Router>
       </div>
     );
   }
