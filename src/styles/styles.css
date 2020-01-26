@@ -8,8 +8,14 @@ body {
   background-color: #dae0e6;
 }
 
-.score{
+.score {
   font-size: 75%;
+}
+#logo {
+  height: 40px;
+  position: relative;
+  margin-right: 10px;
+  transform: translateY(-30%);
 }
 
 #heading {
@@ -36,8 +42,8 @@ body {
 }
 .SearchBar {
   height: 40px;
-  width: 20%;
-  position: absolute;
+  width: 400px;
+  position: relative;
   left: 40%;
   border-radius: 4px;
   border: 1px solid lightgray;
@@ -53,7 +59,7 @@ body {
   align-items: flex-start;
 }
 .Post {
-  width: 60%;
+  width: 650px;
   display: flex;
   margin: 2%;
   padding: 3%;
@@ -98,35 +104,31 @@ body {
   border-radius: 50%;
 }
 
-.ltr{
+.ltr {
   display: flex;
 }
 
-.commentbody{
-  margin: 5px;
-}
 
-.comment{
-  transform: translate(10px);
+.comment {
+  transform: translate(5px);
   width: 95%;
-  margin: 10px;
 }
 
-.redditline{
+.redditline {
   transform: translate(15px);
   border-left: 2px solid black;
 }
 
-.line{
+.line {
   width: 2px;
   border-color: black;
   border-right: 2px solid black;
 }
 
-.slightmargin{
+.slightmargin {
   margin-top: 5px;
 }
 
-.margin-right{
+.margin-right {
   margin-right: 5px;
 }

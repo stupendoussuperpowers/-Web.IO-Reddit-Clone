@@ -1,6 +1,6 @@
-@font-face{
+@font-face {
   font-family: Verdana;
-  src: local('Verdana');
+  src: local("Verdana");
 }
 
 body {
@@ -59,7 +59,7 @@ body {
   background-color: #014980;
 }
 
-.sub-info img{
+.sub-info img {
   margin: 5px;
   margin-right: 20px;
 }
@@ -72,33 +72,33 @@ body {
   margin-left: 0px;
 }
 
-.bold{
+.bold {
   font-weight: bold;
 }
 
-.larger{
+.larger {
   font-weight: bold;
   font-size: 125%;
   margin-top: 10px;
 }
 
-.ltr{
+.ltr {
   display: flex;
   margin-right: 20px;
 }
 
-.wrap{
+.wrap {
   overflow-wrap: break-word;
   width: 95%;
   padding: 8px 12px;
-  font-size: 95%;
+  font-size: 80%;
 }
 
-.slightmargin{
+.slightmargin {
   margin-top: 3px;
 }
 
-.verticalLine{
+.verticalLine {
   height: 10px;
 }
 
@@ -111,7 +111,7 @@ body {
   padding: 0 6px;
 }
 
-.post-image img{
+.post-image img {
   min-width: 500px;
   max-width: 750px;
 }

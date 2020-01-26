@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
 
-export default function Post() {
+export default function Post(props) {
   return (
     <div className="Post">
       <div className="votes">
@@ -18,11 +18,8 @@ export default function Post() {
         />
       </div>
       <div className="Post-right">
-        <p className="Post-user">posted by u/lollipop</p>
-        <p className="Post-text">
-          This is the Post body. Very interesting Post, wow!
-        </p>
-        Comments go here
+        <div className="Post-user">posted by {props.author}</div>
+        <div className="Post-text">{props.title}</div>
       </div>
     </div>
   );
